@@ -1,0 +1,69 @@
+package net.onebean.core.mongo;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+
+/**
+ *  * service 层的基类，所有service类必须继承自此类，该类不能直接使用。
+ * 将service层一些通用的操作给抽离出来，封装到此类中，其他service类必须继承此类，子类可以直接使用此类中的方法。
+ * 该类使用泛型实现了实体和dao层封装
+ * 参考com.weijie.core.BaseBiz
+ * @author 0neBean
+ *
+ * @param <T>
+ * @param <K>
+ */
+public abstract class BaseMongoBiz<T, K extends BaseMongoDao<T>> implements IBaseMongoBiz<T> {	
+	
+	/**
+	 * dao原型属性
+	 */
+	protected K baseMongoDao;
+
+	/**
+	 * 根据K泛型自动装载baseMongoDao
+	 * 
+	 * @param baseMongoDao
+	 */
+	@Autowired
+	public final void setbaseMongoDao(K baseMongoDao) {
+		this.baseMongoDao = baseMongoDao;
+	}
+	
+	public List<T> find(Query query) {
+		 return baseMongoDao.find(query);  
+	}
+	
+	public T findOne(Query query) {
+		 return baseMongoDao.findOne(query);  
+	}
+
+	public void update(Query query, Update update) {
+		baseMongoDao.update(query, update);
+	}
+	
+	public T save(T entity) {
+		 baseMongoDao.save(entity);  
+	     return entity;
+	}
+	
+	public T findById(String id) {
+		return baseMongoDao.findById(id);
+	}
+
+	public T findById(String id, String collectionName) {
+		 return baseMongoDao.findById(id, collectionName);
+	}
+	
+	public MongoPagination<T> findPage(MongoPagination <T> page, Query query) {
+        return baseMongoDao.findPage(page, query); 
+	}
+	
+	public long count(Query query) {
+		return baseMongoDao.count(query);  
+	}
+	
+}
