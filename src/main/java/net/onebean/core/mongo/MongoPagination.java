@@ -16,7 +16,9 @@ public class MongoPagination <T> extends Pagination {
 	 * 添加序列化反序列化ID
 	 */
 	private static final long serialVersionUID = 8045903828118195043L;
-	//封装查询结果在此
+	/**
+	 * 封装查询结果在此
+	 */
 	private List<T> rows;
 	public List<T> getRows() {
 		return rows;

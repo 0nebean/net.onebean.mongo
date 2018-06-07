@@ -2,19 +2,31 @@ package net.onebean.core.mongo.common;
 
 public class Pagination implements java.io.Serializable {
 	private static final long serialVersionUID = -6047376008743214596L;
-	private int DEFAULT_PAGE_SIZE = 10;
-	private int DEFAULT_CURRENTPAGE = 1;
+	private final static int DEFAULT_PAGE_SIZE = 10;
+	private final static  int DEFAULT_CURRENTPAGE = 1;
 
-	private int pageSize; // 每页默认10条数据
-	private int currentPage; // 当前页
-	private int totalPages; // 总页数
-	private int totalCount; // 总数据数
 
-	public Pagination(int totalCount, int pageSize) {
-		this.init(totalCount, pageSize);
+	/**
+	 * 每页默认10条数据
+	 */
+	private int pageSize;
+	/**
+	 * 当前页
+	 */
+	private int currentPage;
+	/**
+	 * 总页数
+	 */
+	private int totalPages;
+	/**
+	 * 总数据数
+	 */
+	private int totalCount;
+
+	public Pagination(int currentPage, int pageSize) {
+		this.init(currentPage, pageSize);
 	}
 
-	// @org.
 	public Pagination() {
 		this.pageSize = DEFAULT_PAGE_SIZE;
 		this.currentPage = DEFAULT_CURRENTPAGE;
@@ -24,13 +36,14 @@ public class Pagination implements java.io.Serializable {
 	 * 初始化分页参数:需要先设置totalRows
 	 */
 
-	public void init(int totalCount, int pageSize) {
+	public void init(int currentPage, int pageSize) {
 		this.pageSize = pageSize;
-		this.totalCount = totalCount;
-		if ((totalCount % pageSize) == 0) {
-			totalPages = totalCount / pageSize;
+		this.currentPage = currentPage;
+
+		if ((currentPage % pageSize) == 0) {
+			totalPages = currentPage / pageSize;
 		} else {
-			totalPages = totalCount / pageSize + 1;
+			totalPages = currentPage / pageSize + 1;
 		}
 
 	}

@@ -70,7 +70,7 @@ public abstract class BaseMongoDao<T> {
 	public MongoPagination<T> findPage(MongoPagination <T> page, Query query) {
         long count = this.count(query);  
         page.setTotalCount(Parse.toInt(count));
-        int pageNumber = page.getTotalPages();  
+        int pageNumber = page.getCurrentPage();
         int pageSize = page.getPageSize();  
         query.skip((pageNumber - 1) * pageSize).limit(pageSize);  
         List<T> rows = this.find(query);  

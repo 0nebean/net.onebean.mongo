@@ -11,13 +11,14 @@ import org.springframework.data.mongodb.core.query.Update;
  *
  * @param <T>
  */
-public interface IBaseMongoBiz<T> {  
-    /** 
-     * 通过条件查询实体(集合) 
-     *  
-     * @param query 
-     */  
-    public List<T> find(Query query) ;  
+public interface IBaseMongoBiz<T> {
+
+    /**
+     * 查询方法
+     * @param query 查询条件
+     * @return List<T>
+     */
+    List<T> find(Query query) ;
   
     /** 
      * 通过一定的条件查询一个实体 
