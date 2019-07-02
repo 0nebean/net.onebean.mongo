@@ -3,7 +3,7 @@
 [public-conf.mongodb](https://github.com/0nebean/public.conf/blob/master/conf/public-conf.mongodb.properties)
 
 
-#### 生成mongoDB 数据模型代码 如下,运行mian方法按照提示生成即可:
+#### 生成mongoDB 数据模型代码 如下,解开 `CreateMongoJavaTool.runIt();` 运行mian方法按照提示生成即可:
 ```java
     public class CodeTool {
     
