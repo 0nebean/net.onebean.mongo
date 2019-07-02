@@ -1,6 +1,6 @@
 package net.onebean.core.mongo;
 
-import net.onebean.core.mongo.common.Pagination;
+import net.onebean.core.Pagination;
 
 import java.util.List;
 
