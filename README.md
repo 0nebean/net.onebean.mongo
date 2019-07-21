@@ -4,7 +4,7 @@
 
 Introduction
 ---
-- 对阿里云短信API的调用封装
+- 对spring-data-mongoDB的依赖和API的调用封装
 
 Documentation
 ---
