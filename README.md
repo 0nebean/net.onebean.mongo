@@ -1,8 +1,18 @@
-* # 配置
-#### 使用该模块需要引用配置项,并做相应配置,配置项参考如下:
+[![GitHub release](https://img.shields.io/badge/release-1.0.0-28a745.svg)](https://github.com/0nebean/com.alibaba.druid-0nebean.custom/releases)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
+
+Introduction
+---
+- 对阿里云短信API的调用封装
+
+Documentation
+---
+- Config
+#### chemical-el框架使用Apollo作为注册中心 ,以下是需要的配置namespace
 [public-conf.mongodb](https://github.com/0nebean/public.conf/blob/master/conf/public-conf.mongodb.properties)
 
-
+- API
 #### 生成mongoDB 数据模型代码 如下,解开 `CreateMongoJavaTool.runIt();` 运行mian方法按照提示生成即可:
 ```java
     public class CodeTool {
