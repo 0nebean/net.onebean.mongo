@@ -1,4 +1,4 @@
-package net.onebean.core.mongo;
+package net.onebean.core.mongo.query;
 
 import net.onebean.core.Pagination;
 

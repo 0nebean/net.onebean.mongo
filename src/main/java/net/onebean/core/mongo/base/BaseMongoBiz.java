@@ -1,7 +1,8 @@
-package net.onebean.core.mongo;
+package net.onebean.core.mongo.base;
 
 import java.util.List;
 
+import net.onebean.core.mongo.query.MongoPagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;

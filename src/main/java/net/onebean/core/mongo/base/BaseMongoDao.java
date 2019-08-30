@@ -1,6 +1,7 @@
-package net.onebean.core.mongo;
+package net.onebean.core.mongo.base;
 
 import net.onebean.core.form.Parse;
+import net.onebean.core.mongo.query.MongoPagination;
 import net.onebean.util.ReflectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;

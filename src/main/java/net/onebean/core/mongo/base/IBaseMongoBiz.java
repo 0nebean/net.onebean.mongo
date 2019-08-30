@@ -1,9 +1,10 @@
-package net.onebean.core.mongo;
+package net.onebean.core.mongo.base;
 
-import java.util.List;
-
+import net.onebean.core.mongo.query.MongoPagination;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
+
+import java.util.List;
 
 /**
  * mangoDB service接口的父接口
@@ -69,7 +70,7 @@ public interface IBaseMongoBiz<T> {
      * @param query 
      * @return 
      */  
-    public MongoPagination<T> findPage(MongoPagination <T> page, Query query); 
+    public MongoPagination<T> findPage(MongoPagination <T> page, Query query);
       
     /** 
      * 求数据总和 
